@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Akshat Trivedi GitHub Page
 
 You can use the [editor on GitHub](https://github.com/akshattrivedi/CountDown-Timer/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
