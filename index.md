@@ -54,4 +54,4 @@ var x = setInterval(function() {
 
 
 
-# Contact Details follow this [link](www.github.com/akshattrivedi)!
+# [RUN THIS CODE !](countdown)
