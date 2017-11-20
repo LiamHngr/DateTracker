@@ -54,4 +54,4 @@ var x = setInterval(function() {
 
 
 
-# For Support and Contact [Email] (akshat.trivedi08@gmail.com) me !
+# For Support and Contact [Email](akshat.trivedi08@gmail.com) me !
