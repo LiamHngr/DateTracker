@@ -54,4 +54,4 @@ var x = setInterval(function() {
 
 
 
-# [RUN THIS CODE!](https://www.akshattrivedi.github.io/CountDown-Timer/countdown)
+# [RUN THIS CODE!](https://akshattrivedi.github.io/CountDown-Timer/countdown)
