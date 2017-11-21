@@ -13,9 +13,9 @@ p {
 }
 </style>
 </head>
-<body>
+<body bgcolor="cyan">
 
-<h1>COUNTDOWN FOR NEW YEAR 2018!</h1>
+  <h1><center>COUNTDOWN FOR NEW YEAR 2018!</center></h1>
 
   
 <p id="demo"></p>
