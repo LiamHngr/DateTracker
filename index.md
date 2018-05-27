@@ -15,14 +15,14 @@ p {
 </head>
 <body bgcolor="cyan">
 
-  <h1><center>COUNTDOWN FOR NEW YEAR 2018!</center></h1>
+  <h1><center>COUNTDOWN FOR NEW YEAR 2019!</center></h1>
 
   
 <p id="demo"></p>
 <p>What are you waiting for ? Start thinking of RESOLUTION.</p>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 1, 2018 00:00:00").getTime();
+var countDownDate = new Date("Jan 1, 2019 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
