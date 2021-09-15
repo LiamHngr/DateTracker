@@ -11,7 +11,9 @@ p {
 </head>
 <body bgcolor="cyan">
 
-  <center><h1>COUNTDOWN FOR NEW YEAR 2022!</h1></center>
+  <center><h1>COUNTDOWN FOR NEW YEAR</h1>
+  <h1 id="newYear"></h1>
+  </center>
 
   
 <p id="demo"></p>
@@ -22,8 +24,12 @@ p {
   
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
 
+var da = new Date();
+var currentYear = da.getFullYear();
+var nextYear = currentYear + 1;
+var countDownDate = new Date("Jan 1, "+ nextYear +" 00:00:00").getTime();
+  
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -42,6 +48,8 @@ var x = setInterval(function() {
     // Output the result in an element with id="demo"
     document.getElementById("demo").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
+  
+    document.getElementById("newYear").innerHTML = newYear + "!";
     
     // If the count down is over, write some text 
     if (distance < 0) {
