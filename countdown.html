@@ -11,8 +11,8 @@ p {
 </head>
 <body bgcolor="cyan">
 
-  <center><h1>COUNTDOWN FOR NEW YEAR</h1>
-  <h1 id="newYear"></h1>
+  <center><h1>COUNTDOWN FOR NEW YEAR <span id="newYear"></span></h1>
+  <!-- <h1 id="newYear"></h1> -->
   </center>
 
   
@@ -49,7 +49,7 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
   
-    document.getElementById("newYear").innerHTML = newYear + "!";
+    document.getElementById("newYear").innerHTML = nextYear + "!";
     
     // If the count down is over, write some text 
     if (distance < 0) {
