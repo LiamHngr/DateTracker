@@ -6,29 +6,47 @@ p {
   text-align: center;
   font-size: 60px;
 }
+.center {
+        display: block;
+        margin: 0 auto;
+        width: 25%;
+    
+      }
 
 </style>
 </head>
 <body bgcolor="cyan">
 
-  <center><h1>COUNTDOWN FOR NEW YEAR <span id="newYear"></span></h1>
+  <center><h1> Echo and Liam Anniversary </h1>
   <!-- <h1 id="newYear"></h1> -->
   </center>
 
-  
+<p>The lovers have been togetherr for</p>
 <p id="demo"></p>
-<p>What are you waiting for ? Start thinking of RESOLUTION.</p>
 <br>
-  <h1><right>Akshat Trivedi</right></h1>
-  
-  
+<img src="./resources/pigeon.gif" alt="Sexy GIF" class="center">
+<br>
+<p> Here is the count down to a special day</p>
+<p id="bday"></p>
+<br>
+  <h1><right>💕</right></h1>
+
+
+
 <script>
 // Set the date we're counting down to
 
 var da = new Date();
 var currentYear = da.getFullYear();
 var nextYear = currentYear + 1;
-var countDownDate = new Date("Jan 1, "+ nextYear +" 00:00:00").getTime();
+console.log(da.getMonth())
+console.log(da.getDate())
+if(da.getMonth >7 && da.getDate() >8 ){
+  nextYear = nextYear +1
+}
+
+var countDownDate = new Date("Aug 8, "+ nextYear +" 00:00:00").getTime();
+var anniversaryDate = new Date("Feb 25, 2023 00:00:00").getTime();
   
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -37,19 +55,72 @@ var x = setInterval(function() {
     var now = new Date().getTime();
     
     // Find the distance between now an the count down date
-    var distance = countDownDate - now;
-    
+    var Bdaydistance = countDownDate - now;
+    var distance =   now - anniversaryDate;
+    // console.log(distance)
+
     // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+    var months = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) /(1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    document.getElementById("demo").innerHTML =years + "y " +months +"m " + days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
   
-    document.getElementById("newYear").innerHTML = nextYear + "!";
+    var date2 = new Date("Aug 8, "+ nextYear +" 00:00:00")
+    var date1 = new Date();
+
+    // Calculate the difference between the two dates in milliseconds
+    var diff = Math.abs(date2 - date1);
+
+    // Convert the difference to years, months, days, hours, minutes, and seconds
+    var Eseconds = Math.floor(diff / 1000);
+    var Eminutes = Math.floor(Eseconds / 60);
+    var Ehours = Math.floor(Eminutes / 60);
+    var Edays = Math.floor(Ehours / 24);
+
+    var Eyears = Math.floor(Edays / 365);
+    Edays %= 365;
+
+    var Emonths = 0;
+    var currentDate = new Date(date1);
+
+    while (currentDate.getTime() < date2.getTime()) {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      Emonths++;
+    }
+
+    if (currentDate.getTime() > date2.getTime()) {
+      Emonths--;
+      currentDate.setMonth(currentDate.getMonth() - 1);
+    }
+
+    Edays = Math.floor((date2.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
+    var Emonths = (date2.getMonth() - date1.getMonth());
+    var Ehours = Math.floor((Bdaydistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var Eminutes = Math.floor((Bdaydistance % (1000 * 60 * 60)) / (1000 * 60));
+    var Eseconds = Math.floor((Bdaydistance % (1000 * 60)) / 1000);
+
+    document.getElementById("bday").innerHTML = Emonths +"m "+Edays + "d " + Ehours + "h "
+    + Eminutes + "m " + Eseconds + "s ";
+
+    /*
+    var Bdayyears = Math.floor(Bdaydistance / (1000 * 60 * 60 * 24 * 360));
+    var bdaysmonths = Math.floor((Bdaydistance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    var Bdaydays = Math.floor((Bdaydistance % (1000 * 60 * 60 * 24 * 30)) /(1000 * 60 * 60 * 24));
+    var Bdayhours = Math.floor((Bdaydistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var Bdayminutes = Math.floor((Bdaydistance % (1000 * 60 * 60)) / (1000 * 60));
+    var Bdayseconds = Math.floor((Bdaydistance % (1000 * 60)) / 1000);
+
+    document.getElementById("bday").innerHTML = bdaysmonths +"m "+Bdaydays + "d " + Bdayhours + "h "
+    + Bdayminutes + "m " + Bdayseconds + "s ";
+    */
+
+    //document.getElementById("newYear").innerHTML = nextYear + "!";
     
     // If the count down is over, write some text 
     if (distance < 0) {
